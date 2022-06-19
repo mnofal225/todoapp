@@ -9,6 +9,12 @@ const app = express();
 // routes
 const todo = require("./routers/todo") // added
 
+// cors
+const cors = require("cors");
+
+// use cors
+app.use(cors({origin:true, credentials: true}));
+
 // connect database
 connectDB();//added
 
