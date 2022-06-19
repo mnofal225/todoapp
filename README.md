@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+BACKEND:
+
+config: Inside the config folder, create a file named db.js. This file will contain the required code for connecting to the MongoDB database.
+
+controllers: The controllers folder will contain the files which will have the methods for the end points to communicate with the database.
+
+models: The models folder, will contain the files which will define the MongoDB schema
+
+routers: The routers folder will contain the files with the endpoints.
