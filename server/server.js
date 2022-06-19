@@ -1,14 +1,21 @@
-const http = require('http');
+// server.js
+require("dotenv").config(); //added
+const express = require("express");
 
-const hostname = '127.0.0.1';
-const port = 5000;
+const connectDB = require("./config/db"); //added
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+const app = express();
+
+// connect database
+connectDB();//added
+
+// initialize middleware
+app.use(express.json({ extended: false }));
+app.get("/", (req, res) => res.send("Server up and running"));
+
+// setting up port
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
+    console.log(`server is running on http://localhost:${PORT}`);
 });
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});  
